@@ -26,6 +26,10 @@ a:hover {
 
 .site-header {
   border-top: 5px solid $cv-ink;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #fff;
 }
 
 .site-header-inner {
