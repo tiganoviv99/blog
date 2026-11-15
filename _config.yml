@@ -8,6 +8,7 @@ baseurl: "/blog"
 github_username: tiganoviv
 
 theme: minima
+logo: /assets/og-image.png
 show_excerpts: true
 
 contacts:
