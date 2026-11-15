@@ -3,25 +3,50 @@
 Personal blog of Vadim Tiganov – notes on ML engineering: ranking, recommender
 systems, search, NLP and LLM/agentic systems.
 
-Built with **Jekyll + [minima](https://github.com/jekyll/minima)** and published
-with **GitHub Pages**.
+Built with **Jekyll + [minima](https://github.com/jekyll/minima)**, rendered by
+**GitHub Actions** and served by **GitHub Pages**.
 
 - Site: https://tiganoviv.github.io/blog/
-- Stack: Jekyll, minima theme, no build step required locally
+- Stack: Jekyll 4, minima theme, a few Jekyll plugins, no Node, no external CMS
 
 ## How it works
 
-GitHub Pages builds the site automatically on every push to `main`. The build
-uses the Jekyll version and plugins that Pages supports natively, so there is no
-CI workflow to maintain and no `Gemfile` to keep in sync.
+Every push to `main` triggers [`.github/workflows/pages.yml`](.github/workflows/pages.yml):
 
-Config lives in [`_config.yml`](_config.yml):
+1. installs Ruby and the gems from [`Gemfile`](Gemfile);
+2. runs `bundle exec jekyll build` (output goes to `_site/`);
+3. uploads `_site` as a Pages artifact and deploys it.
 
-- `baseurl: /blog` – because this is a project site
-- `theme: minima`, plugins `jekyll-feed` and `jekyll-seo-tag`
-- `header_pages` controls which pages appear in the top navigation
-- `contacts` is the list of links shown on the right side of the header (name
-  on the left, contacts on the right) – see `_includes/header.html`
+The site is **not** built by the legacy GitHub Pages builder, because that one
+only allows a whitelisted set of plugins. Building in Actions means any plugin
+can be used – the same approach as larger Jekyll blogs (e.g.
+[yegor256/blog](https://github.com/yegor256/blog), which deploys a prebuilt
+`_site` to a `gh-pages` branch).
+
+Plugins in use ([`_config.yml`](_config.yml)):
+
+| Plugin | What it does |
+|---|---|
+| `jekyll-feed` | RSS at `/blog/feed.xml` |
+| `jekyll-seo-tag` | meta tags, Open Graph, JSON-LD |
+| `jekyll-sitemap` | `/blog/sitemap.xml` |
+| `jekyll-paginate-v2` | home page pagination, 5 posts per page |
+| `jekyll-archives` | one page per tag at `/blog/tags/<tag>/` |
+
+## Repository layout
+
+```
+_config.yml          site config: theme, contacts, plugins, pagination, tags
+Gemfile              gem list (pinned with ~>)
+index.html           home page, paginated via jekyll-paginate-v2
+tags.md              /tags/ – list of all tags with post counts
+about.md             /about/ – short bio and links
+_layouts/            home.html (paginated list), tag-archive.html
+_includes/header.html  name on the left, contacts on the right
+assets/main.scss     minima + colour and layout overrides
+_posts/              the posts themselves
+.github/workflows/   build and deploy pipeline
+```
 
 ## Adding a post
 
@@ -38,36 +63,49 @@ Config lives in [`_config.yml`](_config.yml):
    ```
 
 3. Write Markdown below the front matter.
-4. Commit and push to `main` – the site rebuilds in about a minute.
+4. Commit and push to `main`.
 
-Posts are listed on the home page newest first, with excerpts
-(`show_excerpts: true`). The RSS feed is generated at `/blog/feed.xml`.
+Posts appear on the home page newest first, with excerpts
+(`show_excerpts: true` in `_config.yml`), and 5 per page.
+
+## Tags
+
+Every tag in a post's front matter automatically gets a page at
+`/blog/tags/<tag>/` – no file to create. The `/tags/` page lists all tags.
+
+Keep tags **single words and lowercase** (`ml`, `ranking`, `airflow`): the tag
+page URL is built from the tag name lowercased, so multi-word tags produce URLs
+with spaces.
 
 ## Adding a page
 
-Same as a post, but with `layout: page` and a `permalink`, and add the file name
-to `header_pages` in `_config.yml` so it shows up in the navigation. Example:
-[`about.md`](about.md).
+Same as a post, but with `layout: page` and a `permalink`, plus the file name in
+`header_pages` in `_config.yml` so it shows up in the navigation. Examples:
+[`about.md`](about.md), [`tags.md`](tags.md).
 
 ## Local preview (optional)
 
-Requires Ruby. From the repository root:
+Requires Ruby 3+. From the repository root:
 
 ```bash
-gem install jekyll bundler minima jekyll-feed jekyll-seo-tag
+bundle install
 bundle exec jekyll serve --baseurl ""
 ```
 
-Then open http://localhost:4000. Note that `--baseurl ""` is needed to preview a
-project site locally.
+Then open http://localhost:4000. The `--baseurl ""` flag is needed because the
+site normally lives under `/blog`; without it links in the preview point to
+`/blog/...`.
 
 ## Customisation
 
 Visual tweaks live in [`assets/main.scss`](assets/main.scss): it imports the
-minima theme and overrides a handful of colours. Everything else comes from
-minima, which keeps the stylesheet small and easy to reason about.
+minima theme and overrides colours, the header layout, pagination and tags.
+Everything else comes from minima, which keeps the stylesheet small and easy to
+reason about.
 
 ## Deployment
 
-GitHub Pages, source: `main` branch, root folder. Nothing else to configure –
-pushing to `main` is the deployment.
+GitHub Pages with **Source: GitHub Actions**
+(`https://github.com/tiganoviv/blog/settings/pages`). Pushing to `main` is the
+deployment; the workflow takes about a minute. Build logs and history:
+`https://github.com/tiganoviv/blog/actions`.
