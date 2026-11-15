@@ -16,6 +16,7 @@ contacts:
   - { label: Email, icon: email, url: "mailto:tiganoviv@gmail.com" }
   - { label: WhatsApp, icon: whatsapp, url: "https://wa.me/4407925203294" }
   - { label: GitHub, icon: github, url: "https://github.com/tiganoviv" }
+  - { label: RSS, icon: rss, url: "https://tiganoviv.github.io/blog/feed.xml" }
 
 plugins:
   - jekyll-feed
