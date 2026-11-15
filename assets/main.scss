@@ -41,6 +41,12 @@
 $cv-accent: #684a45;
 $cv-ink: #2d3748;
 
+body {
+  font-family: "CMU Serif", Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
 a,
 a:visited {
   color: $cv-accent;
