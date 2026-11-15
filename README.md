@@ -20,6 +20,8 @@ Config lives in [`_config.yml`](_config.yml):
 - `baseurl: /blog` – because this is a project site
 - `theme: minima`, plugins `jekyll-feed` and `jekyll-seo-tag`
 - `header_pages` controls which pages appear in the top navigation
+- `contacts` is the list of links shown on the right side of the header (name
+  on the left, contacts on the right) – see `_includes/header.html`
 
 ## Adding a post
 

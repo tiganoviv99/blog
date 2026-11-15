@@ -20,6 +20,32 @@ a:hover {
   border-top: 5px solid $cv-ink;
 }
 
+.site-header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 18px;
+}
+
+.site-title {
+  float: none;
+  line-height: 1.2;
+  padding: 10px 0;
+}
+
+.site-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 16px;
+  font-size: 15px;
+}
+
+.site-contacts .page-link {
+  margin: 0;
+}
+
 .site-title,
 .site-title:visited,
 .post-title,

@@ -10,16 +10,18 @@ github_username: tiganoviv
 theme: minima
 show_excerpts: true
 
+contacts:
+  - { label: LinkedIn, url: "https://www.linkedin.com/in/tiganoviv/" }
+  - { label: Email, url: "mailto:tiganoviv@gmail.com" }
+  - { label: WhatsApp, url: "https://wa.me/4407925203294" }
+  - { label: GitHub, url: "https://github.com/tiganoviv" }
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
 minima:
   skin: classic
-  social_links:
-    - { platform: github, user_url: "https://github.com/tiganoviv" }
-    - { platform: linkedin, user_url: "https://www.linkedin.com/in/tiganoviv/" }
-    - { platform: whatsapp, user_url: "https://wa.me/4407925203294" }
 
 header_pages:
   - about.md
