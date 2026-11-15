@@ -18,7 +18,10 @@ layout: default
         <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
       </h3>
       {%- if site.show_excerpts -%}
-        {{ post.excerpt }}
+        <div class="post-excerpt">{{ post.excerpt }}</div>
+        <p class="read-more">
+          <a href="{{ post.url | relative_url }}">Read more &rarr;</a>
+        </p>
       {%- endif -%}
     </li>
     {%- endfor -%}
