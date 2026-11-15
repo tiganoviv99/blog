@@ -1,0 +1,39 @@
+---
+---
+
+@import "minima";
+
+// Accent palette borrowed from the CV: kept small on purpose.
+$cv-accent: #8a7807;
+$cv-ink: #2d3748;
+
+a,
+a:visited {
+  color: $cv-accent;
+}
+
+a:hover {
+  color: darken($cv-accent, 10%);
+}
+
+.site-header {
+  border-top: 5px solid $cv-ink;
+}
+
+.site-title,
+.site-title:visited,
+.post-title,
+.page-heading,
+h1, h2, h3, h4 {
+  color: $cv-ink;
+}
+
+.post-meta,
+.site-footer {
+  color: #4a5568;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+}

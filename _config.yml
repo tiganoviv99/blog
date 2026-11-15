@@ -1,0 +1,25 @@
+title: Vadim Tiganov
+email: tiganoviv@gmail.com
+description: >-
+  Notes on ML engineering – ranking, recommender systems, search, NLP
+  and LLM/agentic systems.
+url: "https://tiganoviv.github.io"
+baseurl: "/blog"
+github_username: tiganoviv
+
+theme: minima
+show_excerpts: true
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+minima:
+  skin: classic
+  social_links:
+    - { platform: github, user_url: "https://github.com/tiganoviv" }
+    - { platform: linkedin, user_url: "https://www.linkedin.com/in/tiganoviv/" }
+    - { platform: whatsapp, user_url: "https://wa.me/4407925203294" }
+
+header_pages:
+  - about.md
