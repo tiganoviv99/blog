@@ -10,10 +10,18 @@ $cv-ink: #2d3748;
 a,
 a:visited {
   color: $cv-accent;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 a:hover {
-  color: darken($cv-accent, 10%);
+  color: darken($cv-accent, 12%);
+  text-decoration-thickness: 2px;
+}
+
+.site-title,
+.contact-link {
+  text-decoration: none;
 }
 
 .site-header {
