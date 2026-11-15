@@ -46,6 +46,12 @@ a:hover {
   padding: 10px 0;
 }
 
+.site-title-suffix {
+  font-weight: 400;
+  font-size: 0.85em;
+  color: $cv-accent;
+}
+
 .site-contacts {
   display: flex;
   flex-wrap: wrap;
