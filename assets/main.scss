@@ -54,6 +54,24 @@ a:hover {
   margin: 0;
 }
 
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  color: $cv-accent;
+}
+
+.contact-link:hover {
+  color: darken($cv-accent, 12%);
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  display: block;
+}
+
 // ---------- Post lists, pagination, tags ----------
 .post-tags {
   margin: 4px 0 0;
