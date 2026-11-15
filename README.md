@@ -49,6 +49,20 @@ _posts/              the posts themselves
 .github/workflows/   build and deploy pipeline
 ```
 
+## Typography
+
+Body text is **CMU Serif** (Computer Modern, the LaTeX face), self-hosted from
+`assets/fonts/` as woff2 and declared in `assets/main.scss`. The type scale
+follows [yegor256.com](https://www.yegor256.com):
+
+- body: 14px, line-height 1.35
+- headlines: 28px on a 28px line, regular weight
+- under each post: date, word count and reading time (200 words per minute,
+  rounded), rendered in `_layouts/post.html` and `_layouts/home.html`
+
+The fonts are distributed under the SIL Open Font License; the woff2 files are
+the ones the reference blog serves.
+
 ## Header contacts
 
 Contacts live in `_config.yml` as a list. Each entry has `label` (used for the
