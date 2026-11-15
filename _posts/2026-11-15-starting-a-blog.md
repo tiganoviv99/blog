@@ -1,28 +1,26 @@
 ---
 layout: post
-title: "Starting a blog"
+title: "Welcome to the blog"
 date: 2026-11-15
-tags: [meta, ml]
+tags: [meta]
 ---
 
-I've been meaning to write things down for a while. Mostly because the most
-useful parts of ML engineering are the ones that never fit into a CV line: how a
-ranking model actually gets from a notebook to 1,600 categories in production,
-why an A/B test that looked great for two weeks turned out to be noise, and how
-much of the job is data plumbing rather than modelling.
+This is where I write about machine learning in production: ranking and
+recommender systems, search, NLP, and the LLM and agentic systems that are
+quietly eating our backlogs.
 
-So this is a place for notes on:
+The posts here are short, practical, and based on things I actually shipped or
+broke: validating an ARPU lift, tagging a catalogue with an LLM, teaching a
+checkout system to see, keeping Airflow from waking people up. No hype, no
+tutorial spam.
 
-- **ranking and recommender systems** – what worked, what didn't, and which
-  metrics moved;
-- **search and NLP** – from semantic search to evaluation sets that are worth
-  trusting;
-- **LLM and agentic systems** – where they help a product and where they just
-  add latency;
-- **tooling** – Airflow, CatBoost, PyTorch, and the small scripts that save
-  hours.
+The blog is built with Jekyll, deployed on GitHub Pages, and has an
+[RSS feed](/feed.xml) if that is your thing.
 
-I'll keep posts short and practical. If something here saves you a week of
-debugging, that's already a win.
+A good place to start is the [tag list](/tags/), where the topics are grouped,
+or any post from the home page that looks relevant.
 
-More about me: [About page](/about/) · [LinkedIn](https://www.linkedin.com/in/tiganoviv/) · [GitHub](https://github.com/tiganoviv)
+Feedback and corrections are welcome at
+[tiganoviv@gmail.com](mailto:tiganoviv@gmail.com).
+
+More about me: [About](/about/) · [LinkedIn](https://www.linkedin.com/in/tiganoviv/) · [GitHub](https://github.com/tiganoviv)
