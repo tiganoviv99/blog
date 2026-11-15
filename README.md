@@ -42,11 +42,19 @@ index.html           home page, paginated via jekyll-paginate-v2
 tags.md              /tags/ – list of all tags with post counts
 about.md             /about/ – short bio and links
 _layouts/            home.html (paginated list), tag-archive.html
-_includes/header.html  name on the left, contacts on the right
+_includes/header.html  name on the left, contact icons on the right
+_includes/contact-icon.html  inline SVG glyphs for the contact links
 assets/main.scss     minima + colour and layout overrides
 _posts/              the posts themselves
 .github/workflows/   build and deploy pipeline
 ```
+
+## Header contacts
+
+Contacts live in `_config.yml` as a list. Each entry has `label` (used for the
+accessible name and the tooltip, not shown) and `icon`, which selects a glyph in
+[`_includes/contact-icon.html`](_includes/contact-icon.html). Adding a network
+means adding a `when` branch there plus an entry in the config.
 
 ## Adding a post
 
