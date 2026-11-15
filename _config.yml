@@ -8,6 +8,7 @@ baseurl: "/blog"
 github_username: tiganoviv
 
 theme: minima
+show_excerpts: true
 
 contacts:
   - { label: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/tiganoviv/" }
