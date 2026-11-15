@@ -92,6 +92,15 @@ a:hover {
   color: $cv-accent;
 }
 
+// Post and page headlines: 28px on a 28px line, regular weight, tight.
+h1 {
+  font-size: 28px;
+  line-height: 28px;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-bottom: 7px;
+}
+
 .site-contacts {
   display: flex;
   flex-wrap: wrap;
