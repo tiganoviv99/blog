@@ -3,6 +3,40 @@
 
 @import "minima";
 
+// ---------- Typeface ----------
+// Computer Modern, self-hosted; the same files the reference blog serves.
+@font-face {
+  font-family: "CMU Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/cmu-serif-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CMU Serif";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/cmu-serif-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CMU Serif";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/cmu-serif-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CMU Serif";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/cmu-serif-bold-italic.woff2") format("woff2");
+}
+
 // Accent palette borrowed from the CV: kept small on purpose.
 $cv-accent: #684a45;
 $cv-ink: #2d3748;
