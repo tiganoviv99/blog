@@ -8,7 +8,6 @@ baseurl: "/blog"
 github_username: tiganoviv
 
 theme: minima
-show_excerpts: true
 
 contacts:
   - { label: LinkedIn, url: "https://www.linkedin.com/in/tiganoviv/" }
@@ -19,9 +18,36 @@ contacts:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate-v2
+  - jekyll-archives
+
+# Posts per page on the home page.
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: /page/:num/
+  sort_reverse: true
+
+# One page per tag, at /blog/tags/<tag>/.
+jekyll-archives:
+  enabled:
+    - tags
+  layout: tag-archive
+  permalinks:
+    tag: /tags/:name/
 
 minima:
   skin: classic
+  date_format: "%b %-d, %Y"
 
 header_pages:
+  - tags.md
   - about.md
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .bundle
